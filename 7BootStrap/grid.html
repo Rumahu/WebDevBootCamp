@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Bootstrap Grid System</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<style type="text/css">
+		.pink{
+			background: pink;
+			border: 1px solid purple;
+		}
+		
+		.blue{
+			background: rgb(117, 168, 249);
+			border: 1px solid purple;
+		}
+	</style>
+</head>
+<body>
+	<!-- demonstrating the 12 column grid system -->
+	<div class="container">
+		<!-- <div class="row">
+			<div class="col-lg-2 pink">COL LG 2</div>
+			<div class="col-lg-8 pink">COL LG 8</div>
+			<div class="col-lg-2 pink">COL LG 2</div>
+		</div> -->
+		<div class="row">
+			<div class="col-md-3 col-sm-6 blue">
+				<div class="row">
+					<div class="col-lg-6 pink">FIRST HALF</div>
+					<div class="col-lg-6 pink">SECOND HALF</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 blue">Date</div>
+			<div class="col-md-3 col-sm-6 blue">Date</div>
+			<div class="col-md-3 col-sm-6 blue">
+				<div class="row">
+					<div class="col-lg-2 pink">1</div>
+					<div class="col-lg-2 pink">2</div>
+					<div class="col-lg-2 pink">3</div>
+					<div class="col-lg-2 pink">4</div>
+					<div class="col-lg-2 pink">5</div>
+					<div class="col-lg-2 pink">6</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
