@@ -1,12 +1,20 @@
 // Toggle if an li item is completed or not
-$('li').on("click", function(){
+$('ul').on('click', 'li', function(){
 	$(this).toggleClass("completed");
 });
 
 // Deletes list item upon clicking on the "X" span
-$('span').on("click", function(event){
+$('ul').on('click', 'span', function(event){
 	$(this).parent().fadeOut(500, function(){
 		$(this).remove();
 	});
 	event.stopPropagation();
+});
+
+$('input[type=text]').keypress(function(pressedKey){
+	if(pressedKey.which === 13){
+		var todoText = $(this).val();
+		$('ul').append("<li><span>X</span> " + todoText + "</li>");
+		$(this).val("");
+	}
 });
