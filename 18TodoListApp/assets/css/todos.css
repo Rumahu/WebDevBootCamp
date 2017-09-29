@@ -1,3 +1,10 @@
-body{
-	background-color: #232323;
+#container{
+	border: 4px solid gray;
+	width: 360px;
+	margin: 0 auto;
+}
+
+.completed{
+	color: gray;
+	text-decoration: line-through;
 }
