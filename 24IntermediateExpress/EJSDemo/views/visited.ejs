@@ -1,5 +1,9 @@
+<% include partials/header %>
+
 <h1>Locations You Have Been</h1>
 
 <% placesVisited.forEach(function(place){ %>
     <li><strong><%= place.name %></strong> - <%= place.location %></li> 
 <% }) %>
+
+<% include partials/footer %>

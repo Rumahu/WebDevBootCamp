@@ -1,12 +1,15 @@
 var express = require("express");
 var app = express();
 
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+
 app.get("/", function(request, response){
-    response.render("home.ejs");
+    response.render("home");
 });
 
 app.get("/explore/:destination", function(req, res){
-    res.render("destination.ejs", {destination: req.params.destination});
+    res.render("destination", {destination: req.params.destination});
 });
 
 app.get("/visited", function(req, res){
@@ -16,7 +19,7 @@ app.get("/visited", function(req, res){
         {name: "Aurora Borealis", location: "Alaska"}
     ];
     
-    res.render("visited.ejs", {placesVisited: placesVisited});
+    res.render("visited", {placesVisited: placesVisited});
 });
 
 
