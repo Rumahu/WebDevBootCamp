@@ -1,1 +1,10 @@
 <h1>You explored: <%= destination%></h1>
+
+<% if(destination.toLowerCase() === "home"){ %>
+    <p>Well that doesn't seem very adventurous... But there is no place quite like home!</p>
+<% } else{%>
+    <p>Wow Keep it up! Think about how many more places you'll go!</p>
+<% } %>
+
+<!-- <%= %> tags render to HTML -->
+<!-- <% %> tags do not render to HTML - e.g. logic. -->
