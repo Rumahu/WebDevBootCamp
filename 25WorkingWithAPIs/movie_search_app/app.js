@@ -3,15 +3,22 @@ var app = express();
 var request = require("request");
 require('dotenv').config();
 
+app.set("view engine", "ejs");
+
 app.get("/", function(request, response){
-   response.send("Home") ;
+   response.render("search");
 });
 
 app.get("/results", function(req, res){
-    request("http://omdbapi.com/?s=star&apikey="+process.env.accessKey, function(error, response, body){
+    var query = req.query.search;
+    console.log(query);
+    var url = "http://omdbapi.com/?s=" + query;
+    var key = "&apikey=" + process.env.accessKey;
+    
+    request(url + key, function(error, response, body){
         if(!error && response.statusCode == 200){
             var parsedData = JSON.parse(body);
-            res.send(parsedData);
+            res.render("results", {data: parsedData});
         }
     });
 });
