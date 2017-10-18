@@ -88,6 +88,18 @@ app.put("/blogs/:id", function(req, res){
    });
 });
 
+app.delete("/blogs/:id", function(req, res){
+    blog.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            console.log(err);
+            res.redirect("/blogs");
+        }
+        else{
+            res.redirect("/blogs");
+        }
+    })
+});
+
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server Initialized");
 });

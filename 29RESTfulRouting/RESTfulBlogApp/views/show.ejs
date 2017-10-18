@@ -11,6 +11,10 @@
                 <!--  %- instead of %= evaluates passed HTML. Obviously this is a security vulnerability (scripts!) ... but now posts are allowed with <p> tags and what not! -->
                 <p><%-blog.body%></p>
             </div>
+            <a class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
         </div>
     </div>
 </div>
