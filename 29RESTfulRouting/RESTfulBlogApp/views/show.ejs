@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= blog.title %></div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui cenetered rounded image" src="<%=blog.image%>">
+            <div class="content">
+                <span><%=blog.created.toDateString()%></span>
+            </div>
+            <div class="description">
+                <!--  %- instead of %= evaluates passed HTML. Obviously this is a security vulnerability (scripts!) ... but now posts are allowed with <p> tags and what not! -->
+                <p><%-blog.body%></p>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ./partials/footer %>
