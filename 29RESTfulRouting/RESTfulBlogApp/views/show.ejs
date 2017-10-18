@@ -8,7 +8,7 @@
                 <span><%=blog.created.toDateString()%></span>
             </div>
             <div class="description">
-                <!--  %- instead of %= evaluates passed HTML. Obviously this is a security vulnerability (scripts!) ... but now posts are allowed with <p> tags and what not! -->
+                <!--  %- instead of %= evaluates passed HTML. Obviously this is a security vulnerability (scripts!) ... but now posts are allowed with <p> tags and what not! (Sanitized with express sanitizer now!) -->
                 <p><%-blog.body%></p>
             </div>
             <a class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
